@@ -107,12 +107,58 @@
 
         /* FOOTER */
         .footer {
-            text-align: center;
-            padding: 30px;
-            opacity: 0.6;
-            font-size: 14px;
-            margin-top: 60px;
-        }
+    background: #0c0c0e;
+    padding: 40px 0 10px;
+    margin-top: 80px;
+    width: 100%;
+    color: #9da7b3;
+    position: relative;
+}
+
+.footer .container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer .copyright span {
+    font-size: 14px;
+    letter-spacing: 0.4px;
+}
+
+.footer a {
+    color: #ff009d;
+    text-decoration: none;
+    margin: 0 4px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: #39bced;
+}
+
+.footer .initialdisp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer .news {
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer .line {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    width: 100%;
+}
     </style>
 </head>
 
@@ -124,7 +170,7 @@
     </div>
 
     <!-- HERO -->
-    <div class="hero" style="background-image: url('hero.jpg');">
+    <div class="hero" style="background-image: url('./hero.jpeg');">
         <div class="hero-content">
             <div class="hero-title">Call Report AI</div>
             <div class="hero-sub">Support • Deployment • Documentation</div>
@@ -138,7 +184,7 @@
 
         <div class="contact-box">
             <strong>Email:</strong> 
-            <a href="mailto:support@yourcompany.com">support@yourcompany.com</a>
+            <a href="mailto:support@cloud-value.com">support@cloud-value.com</a>
         </div>
     </div>
 
@@ -204,9 +250,30 @@ func azure functionapp publish my-function-app
         </ul>
     </div>
 
-    <div class="footer">
-        © 2025 Call Report AI – All rights reserved.
+
+
+<div id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="copyright">
+                    <span>© Cloud Value Advisory GmbH |
+                        <a href="https://www.cloud-value.com/en/imprint/">Imprint</a> |
+                        <a href="https://www.cloud-value.com/en/privacy-policy/">Privacy Policy</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-lg-6 initialdisp">
+                <div id="news" class="news">
+                    <div id="mc4wp_form_widget-1" class="form-inline widget_mc4wp_form_widget"></div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="line"></div>
+</div>
 
 </body>
 </html>
