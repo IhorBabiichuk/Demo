@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Report AI – Help & Documentation</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #005F9E;
+            --accent: #47C1BF;
+            --text: #1a1a1a;
+            --bg: #ffffff;
+            --section-bg: #f7f7f7;
+        }
+
+        body.dark {
+            --text: #f0f0f0;
+            --bg: #0f1116;
+            --section-bg: #1a1d24;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Navigation */
+        .nav {
+            width: 100%;
+            padding: 16px 40px;
+            background: var(--bg);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            transition: background 0.3s;
+        }
+
+        .nav img {
+            height: 40px;
+        }
+
+        .theme-toggle {
+            background: var(--section-bg);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 40px;
+            text-align: center;
+            background: url('./hero.jpg') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,95,158,0.8), rgba(71,193,191,0.8));
+        }
+
+        .hero > div {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        /* Sections */
+        .section {
+            max-width: 950px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section h2 {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section h3 {
+            margin-top: 25px;
+            font-size: 22px;
+            color: var(--accent);
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px;
+            text-align: center;
+            background: var(--section-bg);
+            font-size: 14px;
+            margin-top: 80px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <img src="./logo.png" alt="Call Report AI Logo" />
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div>
+            <h1>Call Report AI</h1>
+            <p>AI-powered call reporting for Dynamics 365 & Power Platform</p>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="section">
+        <h2>Overview</h2>
+        <p>
+            Call Report AI is a Power Platform solution designed to automate call reporting and improve 
+            data accuracy inside Dynamics 365. This documentation covers installation, configuration,
+            and usage instructions.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Installation</h2>
+
+        <h3>1. Import the Solution</h3>
+        <ul>
+            <li>Download the managed solution from AppSource.</li>
+            <li>Go to <strong>Power Apps → Solutions → Import</strong>.</li>
+        </ul>
+
+        <h3>2. Assign Permissions</h3>
+        <ul>
+            <li>Ensure users have the required security roles.</li>
+            <li>Activate Power Automate flows.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Configuration</h2>
+        <ul>
+            <li>Open <strong>Power Apps</strong> → Call Report AI App.</li>
+            <li>Update environment variables.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Using Call Report AI</h2>
+
+        <h3>Create a Call Report</h3>
+        <ul>
+            <li>Open the app</li>
+            <li>Fill call details</li>
+        </ul>
+
+        <h3>AI Insights</h3>
+        <ul>
+            <li>Automatic summary</li>
+            <li>Follow-up suggestions</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Support</h2>
+        <p>
+            Need help? Contact us:  
+            <a href="mailto:support@yourcompany.com">support@yourcompany.com</a>
+        </p>
+    </div>
+
+    <div class="footer">
+        © 2025 Call Report AI — All rights reserved.
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+</body>
+</html>
