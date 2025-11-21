@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,7 @@
         :root {
             --bg: #0b0c0f;
             --text: #ffffff;
-            --accent: #39bced;
+            --accent: #ff2190;
             --accent2: #ff2190;
         }
 
@@ -43,7 +44,7 @@
         .hero {
             width: 100%;
             height: 80vh;
-            background: #000; 
+            background: #000;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -95,7 +96,7 @@
         .contact-box {
             margin-top: 20px;
             padding: 25px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-left: 4px solid var(--accent);
             border-radius: 6px;
         }
@@ -107,58 +108,87 @@
 
         /* FOOTER */
         .footer {
-    background: #0c0c0e;
-    padding: 40px 0 10px;
-    margin-top: 80px;
-    width: 100%;
-    color: #9da7b3;
-    position: relative;
-}
+            background: #0c0c0e;
+            padding: 40px 0 10px;
+            margin-top: 80px;
+            width: 100%;
+            color: #9da7b3;
+            position: relative;
+        }
 
-.footer .container {
-    max-width: 1300px;
-    margin: 0 auto;
-}
+        .footer .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
 
-.footer .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+        .footer .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-.footer .copyright span {
-    font-size: 14px;
-    letter-spacing: 0.4px;
-}
+        .footer .copyright span {
+            font-size: 14px;
+            letter-spacing: 0.4px;
+        }
 
-.footer a {
-    color: #ff009d;
-    text-decoration: none;
-    margin: 0 4px;
-    font-weight: 600;
-    transition: 0.3s;
-}
+        .footer a {
+            color: #ff009d;
+            text-decoration: none;
+            margin: 0 4px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-.footer a:hover {
-    color: #39bced;
-}
+        .footer a:hover {
+            color: #39bced;
+        }
 
-.footer .initialdisp {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+        .footer .initialdisp {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
 
-.footer .news {
-    color: #fff;
-    font-size: 14px;
-}
+        .footer .news {
+            color: #fff;
+            font-size: 14px;
+        }
 
-.footer .line {
-    margin-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    width: 100%;
-}
+        .footer .line {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
+        }
+
+        .cv-premium-link {
+            position: relative;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.25s ease;
+
+        }
+
+        .cv-premium-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0%;
+            height: 2px;
+            background-color: #ff2190;
+            /* твій акцент */
+            transition: width 0.25s ease;
+        }
+
+        .cv-premium-link:hover {
+            color: #ff2190;
+        }
+
+        .cv-premium-link:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -180,100 +210,70 @@
     <!-- SUPPORT INFO -->
     <div class="section">
         <h2>Contact Support</h2>
-        <p>If you need assistance with installation, configuration, or troubleshooting, feel free to contact our support team:</p>
+        <p>If you need assistance with installation, configuration, or troubleshooting, feel free to contact our support
+            team:</p>
 
         <div class="contact-box">
-            <strong>Email:</strong> 
-            <a href="mailto:support@cloud-value.com">support@cloud-value.com</a>
+
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:support@cloud-value.com">support@cloud-value.com</a></li>
+                <li><strong>Website:</strong> <a class="cv-premium-link" href="https://www.cloud-value.com"
+                        target="_blank">
+                        Visit Cloud Value
+                    </a></li>
+            </ul>
         </div>
-    </div>
 
-    <!-- AZURE FUNCTION DEPLOYMENT -->
+    </div>
     <div class="section">
-        <h2>Deploying Azure Function</h2>
-
-        <h3>1. Prepare your environment</h3>
-        <ul>
-            <li>Install <strong>Azure CLI</strong></li>
-            <li>Install <strong>Azure Functions Core Tools</strong></li>
-            <li>Install <strong>.NET 8 SDK</strong> (if your function uses .NET)</li>
-        </ul>
-
-        <h3>2. Log in to Azure</h3>
-        <pre style="background:#111;padding:15px;border-radius:6px;">az login</pre>
-
-        <h3>3. Create Function App</h3>
-        <pre style="background:#111;padding:15px;border-radius:6px;">
-az functionapp create \
-  --resource-group MyGroup \
-  --consumption-plan-location westeurope \
-  --runtime dotnet \
-  --functions-version 4 \
-  --name my-function-app \
-  --storage-account mystorage123
-        </pre>
-
-        <h3>4. Deploy to Azure</h3>
-        <pre style="background:#111;padding:15px;border-radius:6px;">
-func azure functionapp publish my-function-app
-        </pre>
-
-        <p>Once deployed, copy the Function URL and use it as a webhook or API endpoint inside Power Automate or Power Apps.</p>
-    </div>
-
-    <!-- POWER PAGES SOLUTION -->
-    <div class="section">
-        <h2>Installing Power Pages Solution</h2>
-
-        <h3>1. Import solution</h3>
-        <ul>
-            <li>Go to <strong>Power Apps → Solutions</strong></li>
-            <li>Select <strong>Import</strong></li>
-            <li>Choose the <strong>managed solution ZIP</strong></li>
-            <li>Wait until import completes</li>
-        </ul>
-
-        <h3>2. Configure Environment Variables</h3>
-        <ul>
-            <li>Open <strong>Solutions → Environment Variables</strong></li>
-            <li>Set values for required API URLs, keys, or configuration settings</li>
-        </ul>
-
-        <h3>3. Publish changes</h3>
-        <p>Open Power Pages site → <strong>Sync configuration</strong> → <strong>Publish</strong>.</p>
-
-        <h3>4. Optional: Enable integration</h3>
-        <ul>
-            <li>Activate Power Automate flows</li>
-            <li>Enable site permissions</li>
-            <li>Validate table permissions</li>
-        </ul>
+        <h2>Instruction</h2>
+        <p>The following steps must be taken to deploy the solution</p>
+        <div class="contact-box">
+        <div>
+           <strong>Step 1.</strong> <a class="cv-premium-link" href="az-key-endpoint.html" target="_self">
+                 Azure Keys & Endpoints — Illustrated Setup Guide
+            </a>
+        </div>
+        <div>
+            <strong>Step 2.</strong><a class="cv-premium-link" href="instal-pa-solution.html" target="_self">
+                Publish PowerApps Solution Manual
+            </a>
+        </div>
+        <div>
+            <strong>Step 3.</strong><a class="cv-premium-link" href="deploy-az-f.html" target="_self">
+                Deploying Azure Function
+            </a>
+        </div></div>
     </div>
 
 
 
-<div id="footer" class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-lg-6">
-                <div class="copyright">
-                    <span>© Cloud Value Advisory GmbH |
-                        <a href="https://www.cloud-value.com/en/imprint/">Imprint</a> |
-                        <a href="https://www.cloud-value.com/en/privacy-policy/">Privacy Policy</a>
-                    </span>
+
+
+
+    <div id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="copyright">
+                        <span>© Cloud Value Advisory GmbH |
+                            <a href="https://www.cloud-value.com/en/imprint/">Imprint</a> |
+                            <a href="https://www.cloud-value.com/en/privacy-policy/">Privacy Policy</a>
+                        </span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-md-12 col-lg-6 initialdisp">
-                <div id="news" class="news">
-                    <div id="mc4wp_form_widget-1" class="form-inline widget_mc4wp_form_widget"></div>
+                <div class="col-md-12 col-lg-6 initialdisp">
+                    <div id="news" class="news">
+                        <div id="mc4wp_form_widget-1" class="form-inline widget_mc4wp_form_widget"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="line"></div>
-</div>
+        <div class="line"></div>
+    </div>
 
 </body>
+
 </html>
