@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Publish a Solution – Call Report AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: #0b0c0f;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+
+        .nav {
+            width: 100%;
+            padding: 20px 40px;
+            position: fixed;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav img {
+            height: 46px;
+        }
+
+        .menu a {
+            margin-left: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            align-items: center;
+        }
+
+        .menu a:hover {
+            color: #ff2190;
+        }
+
+        .section {
+            max-width: 900px;
+            padding: 120px 25px 50px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 900;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #ff2190;
+            margin-top: 40px;
+        }
+
+        pre {
+            background: #111;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="nav">
+    <img src="logo.png" alt="Logo">
+    <div class="menu">
+        <a href="index.html">Home</a>
+       
+    </div>
+</div>
+
+<div class="section">
+    <h1>Azure Keys & Endpoints — Illustrated Setup Guide</h1>
+    <p>This guide explains how to provision three Azure capabilities and capture the correct values for your application environment variables.</p>
+
+    <h2>1. Speech to Text (Azure AI Speech service) — quick creation</h2>
+    <p>Goal: create a Speech service and copy your KEY (1 or 2) and Location/Region to use in environment variables.</p>
+    <ul>
+        <li>Azure Portal → Create a resource → search “Speech” (Azure AI services) → Create.</strong></li>
+        <li>Select Subscription, Resource group, Region (near users), Name, and SKU (F0 for tests, S0 for production).</li>
+        <li>After deployment, click Go to resource → open Keys and Endpoint.</strong></li>
+        <li>Copy KEY 1 or KEY 2 and note the Region value.</li>
+    </ul>
+    <p>Dataverse environment variables:</p>
+    <ul>
+        <li>CallReport_SpeechSeviceKey = &lt;key1-or-key2&gt;</li>
+        <li>Callreport_SpeechServiceRegion = &lt;your-region&gt;</li>
+    </ul>
+
+    <h2>2. Businesscard (Document Intelligence) — quick creation</h2>
+    <p>Goal: create a Document Intelligence resource and copy your KEY and Endpoint.</p>
+    <ul>
+        <li>Azure Portal → Create a resource → Document Intelligence → Create.</li>
+        <li>Fill Subscription, Resource group, Region, Name, SKU (F0 or S0).</li>
+        <li>After deployment, open the resource → Keys and Endpoint.</li>
+        <li>Copy a KEY and the Endpoint URL.</li>
+    </ul>
+    <p>Dataverse environment variables:</p>
+
+    <ul>
+        <li>BusinessCardReader_Key = &lt;key&gt; </li>
+        <li>BusinessCardReader_Endpoint = &lt;endpoint URL&gt;</li>
+    </ul>
+
+    <h2>3. OpenAI (Azure AI Project in Azure AI Foundry)</h2>
+    <p>Goal: create a new AI Project, deploy a chat completion model (e.g., gpt-4.1), then copy the Target URL (model inference endpoint) and Key.</p>
+    <ul>
+        <li>Go to Azure AI Foundry → Create new → Project. Pick subscription, resource group, region, and name.</li>
+        <li>Inside the project: open Model catalog → select a chat model (e.g., gpt-4.1) → Deploy (set a deployment name).</li>
+        <li>Back in the project Overview, in Endpoints and keys, copy the API Key and the Azure AI model inference endpoint (Target URL).</li>
+        <li>Use the endpoint together with your deployment name in API calls.</li>
+    </ul>
+    <p>Dataverse environment variables:</p>
+    <ul>
+        <li>CallReport_AzureOpenAILink = &lt;https://&lt;your_project_name>.openai.azure.com/openai/deployments/gpt-4-4/chat/completions?api-version=2024-08-01-preview></li>
+        <li>CallReport_AzureOpenAIApiKey = &lt;api-key></li>
+    </ul>
+
+
+
+    <h2>Example: Azure AI Foundry — Project Overview (Endpoints and keys)</h2>
+    <p>Your project Overview shows the API key and Azure AI model inference endpoint. Copy them for environment variables.</p>
+    <div style="text-align:center;">
+        <img src="img1.jpg" alt="img1" />
+    </div>
+</div>
+
+<div class="footer">
+    © Cloud Value Advisory GmbH — All rights reserved.
+</div>
+
+</body>
+</html>
