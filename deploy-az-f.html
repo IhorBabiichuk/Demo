@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Publish a Solution – Call Report AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: #0b0c0f;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+
+        .nav {
+            width: 100%;
+            padding: 20px 40px;
+            position: fixed;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav img {
+            height: 46px;
+        }
+
+        .menu a {
+            margin-left: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            align-items: center;
+        }
+
+        .menu a:hover {
+            color: #ff2190;
+        }
+
+        .section {
+            max-width: 900px;
+            padding: 120px 25px 50px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 900;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #ff2190;
+            margin-top: 40px;
+        }
+
+        pre {
+            background: #111;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="nav">
+    <img src="logo.png" alt="Logo">
+    <div class="menu">
+        <a href="index.html">Home</a>
+       
+    </div>
+</div>
+
+<div class="section">
+        <h1>Deploying Azure Function</h1>
+
+        <h2>1. Prepare your environment</h2>
+        <ul>
+            <li>Install <strong>Azure CLI</strong></li>
+            <li>Install <strong>Azure Functions Core Tools</strong></li>
+            <li>Install <strong>.NET 8 SDK</strong> (if your function uses .NET)</li>
+        </ul>
+
+        <h2>2. Log in to Azure</h2>
+        <pre style="background:#111;padding:15px;border-radius:6px;">az login</pre>
+
+        <h2>3. Create Function App</h2>
+        <pre style="background:#111;padding:15px;border-radius:6px;">
+az functionapp create \
+  --resource-group MyGroup \
+  --consumption-plan-location westeurope \
+  --runtime dotnet \
+  --functions-version 4 \
+  --name my-function-app \
+  --storage-account mystorage123
+        </pre>
+
+        <h2>4. Deploy to Azure</h2>
+        <pre style="background:#111;padding:15px;border-radius:6px;">
+func azure functionapp publish my-function-app
+        </pre>
+
+        <p>Once deployed, copy the Function URL and use it as a webhook or API endpoint inside Power Automate or Power
+            Apps.</p>
+    </div>
+
+<div class="footer">
+    © Cloud Value Advisory GmbH — All rights reserved.
+</div>
+
+
+ 
+
+</body>
+</html>
